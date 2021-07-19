@@ -6,8 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
     validates :first_name, presence: true, length: { minimum: 3, maximum: 100 }
-
-	validates :last_name, presence: true, length: { minimum: 3, maximum: 100 }
+    validates :last_name, presence: true, length: { minimum: 3, maximum: 100 }
 
 
 	def full_name
