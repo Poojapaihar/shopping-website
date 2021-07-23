@@ -4,8 +4,12 @@
 		<div class="col-8 mt-4">
 			<div class="card text-center shadow mb-5 bg-white rounded">
 			  <div class="card-header font-italic">
-			    by Pooja Parihar
-			  </div>
+			    <% if @product.image %>
+				    	<p class="card-text"><%= image_tag @product.image, :width => 200, :height => 200 %></p>
+		    	<% else %>
+				    	<p class="text-danger">No image</p>
+			    <% end %>
+			  </div>	
 			  <div class="card-body">
 			    <div class="card-text text-left"><b>Product: </b><%= @product.name %></div>
 			    

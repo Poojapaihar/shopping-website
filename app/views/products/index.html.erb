@@ -9,6 +9,12 @@
 				<div class="card text-center shadow mb-5 bg-white rounded">
 				  <div class="card-body">
 				    <h5 class="card-title"><b><%= product.name %></b></h5>
+				    <% if product.image %>
+				    	<p class="card-text"><%= image_tag product.image, :width => 100, :height => 100 %></p>
+				    <% else %>
+				    	<p class="text-danger">No image</p>
+				    <% end %>
+
 				    <% if product.quantity != 0 %>
 				    	<p class="card-text">Quantity: <%= product.quantity %></p>
 				    <% else %>
