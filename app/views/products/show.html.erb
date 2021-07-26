@@ -23,6 +23,15 @@
 			    <div class="card-text text-left mt-4">
 			    	<%= render 'orders/form' %>
 			    </div>
+			    <div class="card-text text-left mt-4">
+			    	<% if user_signed_in? %>
+				    	<% if @product.liked?(current_user) %>
+				    		<%= button_to 'Liked', like_path(@product), method: :post, disabled: true %>
+				    	<% else %>
+				    		<%= button_to 'Like', like_path(@product), method: :post, class: 'btn btn-primary' %>
+				    	<% end %>
+			    	<% end %>
+			    </div>
 			  </div>
 			  <div class="card-footer text-muted">
 			  	<small>Created <%= time_ago_in_words(@product.created_at) %> ago, edited <%= time_ago_in_words(@product.updated_at) %> ago</small>

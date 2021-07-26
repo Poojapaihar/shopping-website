@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
   resource :cards, only: [:show]
 
+  post '/product/:id/like', to: 'products#like', as: 'like'
 end
